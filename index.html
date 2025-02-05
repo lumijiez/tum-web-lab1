@@ -5,72 +5,168 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Schipschi Daniil - Portfolio</title>
     <style>
+        :root {
+            --primary: #5B6CD9;
+            --secondary: #8C94E8;
+            --accent: #F0B429;
+            --background: #F8F9FD;
+            --text: #2D3748;
+            --text-light: #718096;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
         }
 
         header {
-            background-color: #4CAF50;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 20px 0;
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(91, 108, 217, 0.15);
         }
 
         header h1 {
             margin: 0;
-            font-size: 36px;
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         section {
-            padding: 20px;
-            margin: 20px;
+            padding: 30px;
+            margin: 30px auto;
             background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        section:hover {
+            transform: translateY(-2px);
         }
 
         section h2 {
-            font-size: 28px;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
+            font-size: 24px;
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(91, 108, 217, 0.1);
+        }
+
+        .contact-info p {
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-light);
         }
 
         ul {
             list-style-type: none;
             padding-left: 0;
+            margin: 0;
         }
 
         li {
-            margin: 10px 0;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(248, 249, 253, 0.5);
+            border-radius: 8px;
         }
 
-        .contact-info p {
-            margin: 5px 0;
+        li strong {
+            color: var(--primary);
+            font-size: 18px;
+            display: block;
+            margin-bottom: 8px;
         }
 
         .project-links a {
-            color: #4CAF50;
+            display: inline-block;
+            color: var(--primary);
             text-decoration: none;
+            padding: 8px 16px;
+            background-color: rgba(91, 108, 217, 0.1);
+            border-radius: 6px;
+            transition: all 0.2s ease;
         }
 
         .project-links a:hover {
-            text-decoration: underline;
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .skills ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skills li {
+            margin: 0;
+            background: linear-gradient(135deg, rgba(91, 108, 217, 0.05), rgba(140, 148, 232, 0.05));
+        }
+
+        .languages ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .languages li {
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            section {
+                padding: 20px;
+                margin: 20px auto;
+            }
+
+            .skills ul, .languages ul {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Schipschi Daniil</h1>
-        <p>Student at TUM - FAF-223, Year 3</p>
-    </header>
+<header>
+    <h1>Schipschi Daniil</h1>
+    <p>Student at TUM - FAF-223, Year 3</p>
+</header>
 
+<div class="container">
     <section class="contact-info">
         <h2>Contact Information</h2>
         <p>Email: lumijiez@example.com</p>
@@ -87,12 +183,14 @@
         <h2>Education</h2>
         <ul>
             <li>
-                <strong>Technical University of Moldova (TUM)</strong> - B.Sc. in Computer Science (2021 - Present)
+                <strong>Technical University of Moldova (TUM)</strong>
+                <p>B.Sc. in Computer Science (2021 - Present)</p>
                 <p>Favorite Course: Software Engineering</p>
                 <p>Pleasant Memory: Working on a group project where we developed a simple web application and applied Agile practices.</p>
             </li>
             <li>
-                <strong>High School</strong> - Graduation (2019)
+                <strong>High School</strong>
+                <p>Graduation (2019)</p>
                 <p>Favorite Course: Mathematics</p>
                 <p>Pleasant Memory: Winning a local coding competition as part of a team project.</p>
             </li>
@@ -128,10 +226,20 @@
     <section class="languages">
         <h2>Languages</h2>
         <ul>
-            <li>English: Fluent</li>
-            <li>German: Intermediate</li>
-            <li>Russian: Native</li>
+            <li>
+                <strong>English</strong>
+                <p>Fluent</p>
+            </li>
+            <li>
+                <strong>German</strong>
+                <p>Intermediate</p>
+            </li>
+            <li>
+                <strong>Russian</strong>
+                <p>Native</p>
+            </li>
         </ul>
     </section>
+</div>
 </body>
 </html>
