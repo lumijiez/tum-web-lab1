@@ -6,14 +6,26 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Schipschi Daniil - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #5B6CD9;
-            --secondary: #8C94E8;
-            --accent: #F0B429;
-            --background: #F8F9FD;
-            --text: #2D3748;
-            --text-light: #718096;
+            --primary: #4F46E5;
+            --secondary: #818CF8;
+            --accent: #F59E0B;
+            --background: #F8FAFC;
+            --text: #1E293B;
+            --text-light: #64748B;
+            --gradient-1: linear-gradient(135deg, #4F46E5, #818CF8);
+            --gradient-2: linear-gradient(135deg, #818CF8, #C7D2FE);
+            --gradient-3: linear-gradient(135deg, #F59E0B, #FCD34D);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
@@ -22,64 +34,107 @@
             padding: 0;
             background-color: var(--background);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: var(--gradient-1);
             color: white;
-            padding: 40px 20px;
+            padding: 80px 20px;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(91, 108, 217, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-2);
+            opacity: 0.3;
+            transform: skewY(-6deg);
+            transform-origin: top left;
         }
 
         header h1 {
+            position: relative;
             margin: 0;
-            font-size: 42px;
+            font-size: 48px;
             font-weight: 700;
             letter-spacing: -0.5px;
+            background: var(--gradient-3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         header p {
-            margin: 10px 0 0;
-            font-size: 18px;
+            position: relative;
+            margin: 15px 0 0;
+            font-size: 20px;
             opacity: 0.9;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 40px 20px;
         }
 
         section {
-            padding: 30px;
-            margin: 30px auto;
-            background-color: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease;
+            padding: 35px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         section:hover {
-            transform: translateY(-2px);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        section:hover::before {
+            opacity: 1;
         }
 
         section h2 {
-            font-size: 24px;
-            color: var(--primary);
+            font-size: 28px;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-top: 0;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(91, 108, 217, 0.1);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(79, 70, 229, 0.1);
         }
 
         .contact-info p {
-            margin: 12px 0;
+            margin: 15px 0;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             color: var(--text-light);
+            font-size: 16px;
         }
 
         ul {
@@ -89,74 +144,104 @@
         }
 
         li {
-            margin: 20px 0;
-            padding: 15px;
-            background: rgba(248, 249, 253, 0.5);
-            border-radius: 8px;
+            margin: 25px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.03), rgba(129, 140, 248, 0.03));
+            border-radius: 12px;
+            border: 1px solid rgba(79, 70, 229, 0.1);
         }
 
         li strong {
             color: var(--primary);
-            font-size: 18px;
+            font-size: 20px;
+            font-weight: 600;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .project-links a {
             display: inline-block;
-            color: var(--primary);
+            color: white;
             text-decoration: none;
-            padding: 8px 16px;
-            background-color: rgba(91, 108, 217, 0.1);
-            border-radius: 6px;
-            transition: all 0.2s ease;
+            padding: 10px 20px;
+            background: var(--gradient-1);
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
         .project-links a:hover {
-            background-color: var(--primary);
-            color: white;
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.2);
         }
 
         .skills ul {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
         }
 
         .skills li {
             margin: 0;
-            background: linear-gradient(135deg, rgba(91, 108, 217, 0.05), rgba(140, 148, 232, 0.05));
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(129, 140, 248, 0.05));
+            transition: all 0.3s ease;
+        }
+
+        .skills li:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.08), rgba(129, 140, 248, 0.08));
         }
 
         .languages ul {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
         }
 
         .languages li {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.03), rgba(129, 140, 248, 0.03));
+        }
+
+        .languages li strong {
+            font-size: 18px;
+            margin-bottom: 8px;
         }
 
         @media (max-width: 768px) {
             header {
-                padding: 30px 15px;
+                padding: 50px 15px;
             }
 
             header h1 {
-                font-size: 32px;
+                font-size: 36px;
+            }
+
+            header p {
+                font-size: 18px;
             }
 
             section {
-                padding: 20px;
-                margin: 20px auto;
+                padding: 25px;
+                margin: 25px auto;
             }
 
             .skills ul, .languages ul {
                 grid-template-columns: 1fr;
             }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background: var(--secondary);
+            color: white;
         }
     </style>
 </head>
